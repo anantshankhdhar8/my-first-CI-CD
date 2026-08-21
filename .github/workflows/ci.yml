@@ -25,7 +25,11 @@ jobs:
                 #run your test command just like you would locally
 
         -   name: Execute automated tests
-            run: python test_app.py
+            run: |
+             pip install pytest
+             python test_app.py
+
+
             
             
 
