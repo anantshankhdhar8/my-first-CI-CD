@@ -27,7 +27,7 @@ jobs:
         -   name: Execute automated tests
             run: |
              pip install pytest
-             python test_app.py
+             pytest test_app.py
 
 
             
