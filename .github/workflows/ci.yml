@@ -1,0 +1,31 @@
+name: Python Testing Pipeline
+
+#1. Trigger the process every time someone pushes code
+
+on: [push]
+
+jobs:
+    run-our-tests:
+        #2. tell Github to hire a fresh, clean Linux virtual machine
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+            #3. pull your code from Github onto that clean machine
+        -   name: Copy code into the runner
+            uses: actions/checkout@v4
+
+            #4. install python onto the runner machine
+        -   name: Install Python environment
+            uses: actions/setup-python@v5
+            with:
+                python-version: '3.10'
+
+                #run your test command just like you would locally
+
+        -   name: Execute automated tests
+            run: python test_app.py
+            
+            
+
